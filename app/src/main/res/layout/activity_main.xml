@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
@@ -9,10 +9,20 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context="com.easylearning.easylearning.MainActivity">
 
+    <Button
+        android:id="@+id/button_electrical_field"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/main_topic_button"
+        android:onClick="sendMessageElectrostaticFields"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        android:text="@string/electrostatic_fields"
+        android:layout_marginBottom="30dp"/>
+</LinearLayout>
