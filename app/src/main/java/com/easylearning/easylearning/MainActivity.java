@@ -13,7 +13,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void sendMessageElectrostaticFields(View view) {
+    public void sendMessageElectrostaticField(View view) {
+        Intent intent = new Intent(this, TopicActivity.class);
+        startActivity(intent);
+    }
+
+    public void sendMessageElectricalFlowField(View view) {
+        Intent intent = new Intent(this, TopicActivity.class);
+        startActivity(intent);
+    }
+
+    public void sendMessageElectricalNetwork(View view) {
+        Intent intent = new Intent(this, TopicActivity.class);
+        startActivity(intent);
+    }
+
+    public void sendMessageStationaryMagneticField(View view) {
+        Intent intent = new Intent(this, TopicActivity.class);
+        startActivity(intent);
+    }
+
+    public void sendMessageElectromagneticField(View view) {
         Intent intent = new Intent(this, TopicActivity.class);
         startActivity(intent);
     }

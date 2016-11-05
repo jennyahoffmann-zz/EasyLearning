@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Easy Learning</string>
-    <string name="electrostatic_fields">Elektrostatische Felder</string>
+    <string name="electrostatic_field">Elektrostatisches Feld</string>
+    <string name="electrical_flow_field">Elektrisches Strömungsfeld</string>
+    <string name="electrical_network">Elektrisches Netzwerk</string>
+    <string name="stationary_magnetic_field">Stationäres Magnetfeld</string>
+    <string name="time_varying_electromagnetic_field">Zeitlich veränderliches elektromagnetisches Feld</string>
 </resources>
