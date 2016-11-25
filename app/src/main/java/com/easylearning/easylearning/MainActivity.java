@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessageElectricalFlowField(View view) {
         Intent intent = new Intent(this, TopicActivity.class);
-        intent.putExtra("topic", "electricalFlowField");
+        intent.putExtra("topic", R.string.electrical_flow_field);
         startActivity(intent);
     }
 

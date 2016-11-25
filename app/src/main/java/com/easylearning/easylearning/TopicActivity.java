@@ -2,6 +2,7 @@ package com.easylearning.easylearning;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class TopicActivity extends AppCompatActivity {
@@ -23,7 +24,17 @@ public class TopicActivity extends AppCompatActivity {
         String[] output = structure.getTopic(topic);
 
         setContentView(R.layout.activity_topic);
-        TextView tv = (TextView) findViewById(R.id.textview);
-        tv.setText(output[2]);
+
+        final int N = output.length;
+        LinearLayout ll = (LinearLayout) findViewById(R.id.activity_topic);
+        for (int i =0; i < N; i++) {
+            TextView tv = new TextView(this);
+            tv.setText(output[i]);
+            tv.setId(i + 5);
+            ll.addView(tv);
+        }
+
+        //TextView tv = (TextView) findViewById(R.id.textview);
+        //tv.setText(output[2]);
     }
 }
