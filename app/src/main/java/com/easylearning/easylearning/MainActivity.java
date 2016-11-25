@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessageElectrostaticField(View view) {
         Intent intent = new Intent(this, TopicActivity.class);
-        intent.putExtra("topic", "electrostaticField");
+        //intent.putExtra("topic", "electrostaticField");
+        intent.putExtra("topic", R.string.electrostatic_field);
         startActivity(intent);
     }
 

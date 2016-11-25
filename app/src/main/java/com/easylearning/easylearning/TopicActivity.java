@@ -9,13 +9,21 @@ public class TopicActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_topic);
+        Structure structure = new Structure();
+
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
             return;
         }
-        String output = extras.getString("topic");
+        //String output = extras.getString("topic");
+        //String output = Integer.toString(R.string.electrical_network)
+
+       //int[] main = structure.getStructure();
+        int topic = extras.getInt("topic");
+        String[] output = structure.getTopic(topic);
+
+        setContentView(R.layout.activity_topic);
         TextView tv = (TextView) findViewById(R.id.textview);
-        tv.setText(output);
+        tv.setText(output[2]);
     }
 }
