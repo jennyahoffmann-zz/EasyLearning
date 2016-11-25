@@ -27,6 +27,8 @@ public class TopicActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_topic);
 
+        setTitle(extraTopic);
+
         final int N = topic.length;
         LinearLayout ll = (LinearLayout) findViewById(R.id.activity_topic);
         for (int i =0; i < N; i++) {

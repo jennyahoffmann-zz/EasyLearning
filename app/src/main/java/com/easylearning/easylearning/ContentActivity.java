@@ -25,6 +25,8 @@ public class ContentActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_content);
 
+        setTitle(extraContent);
+
         final int N = content.length;
         LinearLayout ll = (LinearLayout) findViewById(R.id.activity_content);
         for (int i =0; i < N; i++) {
