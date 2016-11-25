@@ -1,7 +1,9 @@
 package com.easylearning.easylearning;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,7 +23,7 @@ public class TopicActivity extends AppCompatActivity {
 
        //int[] main = structure.getStructure();
         int topic = extras.getInt("topic");
-        String[] output = structure.getTopic(topic);
+        final String[] output = structure.getTopic(topic);
 
         setContentView(R.layout.activity_topic);
 
@@ -31,6 +33,15 @@ public class TopicActivity extends AppCompatActivity {
             TextView tv = new TextView(this);
             tv.setText(output[i]);
             tv.setId(i + 5);
+            tv.setClickable(true);
+            final String out = output[i];
+            tv.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), ContentActivity.class);
+                    intent.putExtra("content", out);
+                    v.getContext().startActivity(intent);
+                }
+            });
             ll.addView(tv);
         }
 
