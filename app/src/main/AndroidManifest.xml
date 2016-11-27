@@ -17,8 +17,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TopicActivity" />
-        <activity android:name=".ContentActivity"></activity>
+        <activity android:name=".TopicActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ContentActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LessonTextActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".LessonQuizActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

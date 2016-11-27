@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -23,18 +24,18 @@ public class ContentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Structure structure = new Structure();
-
         setContentView(R.layout.activity_content);
 
+        //---- get extras submitted by intent
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
             return;
         }
         String extraContent = extras.getString("content");
-        ArrayList<String> content = structure.getContent(extraContent);
 
-        setContentView(R.layout.activity_content);
+        //---- get list content for selected topic
+        Structure structure = new Structure();
+        final ArrayList<String> content = structure.getContent(extraContent);
 
         setTitle(extraContent);
 
@@ -42,6 +43,13 @@ public class ContentActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.activity_content);
         assert listView != null;
         listView.setAdapter(itemsAdapter);
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position , long id) {
+                Intent intent = new Intent(view.getContext(), LessonTextActivity.class);
+                intent.putExtra("content", content.get(position));
+                startActivity(intent);
+            }
+        });
     }
 }

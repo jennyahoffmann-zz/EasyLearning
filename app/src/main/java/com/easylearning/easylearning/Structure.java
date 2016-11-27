@@ -52,9 +52,9 @@ public class Structure {
     String q = "quiz";
 
     //........... electrical Charge ...........//
-    private ArrayList<String> electricalCharge = new ArrayList<>(Arrays.asList("Herleitung des Begriffs", "Ladungstrennung (Ionisation)", "Rekombination"));
-    private ArrayList<String> chargeDensity = new ArrayList<>(Arrays.asList("Linienladung", "Berechnung", "Ladungsträger im Festkörper"));
-    private ArrayList<String> coulombsLaw = new ArrayList<>(Arrays.asList("Herleitung", "Coulomb'sches Gesetz", "Mehrfache Kraftwirkung auf eine Punktladung"));
+    private ArrayList<String> electricalCharge = new ArrayList<>(Arrays.asList("Herleitung: Ladung", "Ladungstrennung (Ionisation)", "Rekombination"));
+    private ArrayList<String> chargeDensity = new ArrayList<>(Arrays.asList("Linienladung", "Berechnung von Ladungsdichten", "Ladungsträger im Festkörper"));
+    private ArrayList<String> coulombsLaw = new ArrayList<>(Arrays.asList("Herleitung: Coulomb'sches Gesetz", "Coulomb'sches Gesetz", "Mehrfache Kraftwirkung auf eine Punktladung"));
 
    /* public String[] getContent(int i) {
         if (i == R.string.electrostatic_field) {i = 0;}

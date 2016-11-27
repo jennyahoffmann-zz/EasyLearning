@@ -27,7 +27,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:text="@string/electrostatic_field" />
+            android:text="@string/electrostatic_field"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
 
         <Button
             android:id="@+id/button_electrical_flow_field"
@@ -40,7 +42,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:text="@string/electrical_flow_field" />
+            android:text="@string/electrical_flow_field"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
 
         <Button
             android:id="@+id/button_electrical_network"
@@ -53,7 +57,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:text="@string/electrical_network" />
+            android:text="@string/electrical_network"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
 
         <Button
             android:id="@+id/button_stationary_magnetic_field"
@@ -66,7 +72,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:text="@string/stationary_magnetic_field" />
+            android:text="@string/stationary_magnetic_field"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
 
         <Button
             android:id="@+id/button_time_varying_electromagnetic_field"
@@ -79,6 +87,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:text="@string/time_varying_electromagnetic_field" />
+            android:text="@string/time_varying_electromagnetic_field"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
     </LinearLayout>
 </ScrollView>

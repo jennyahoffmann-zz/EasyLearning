@@ -5,4 +5,6 @@
     <string name="electrical_network">Elektrisches Netzwerk</string>
     <string name="stationary_magnetic_field">Stationäres Magnetfeld</string>
     <string name="time_varying_electromagnetic_field">Zeitlich veränderliches elektromagnetisches Feld</string>
+    <string name="next">weiter</string>
+    <string name="submit">bestätigen</string>
 </resources>

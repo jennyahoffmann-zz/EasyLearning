@@ -3,7 +3,9 @@ package com.easylearning.easylearning;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -23,23 +25,18 @@ public class TopicActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_topic);
 
         //---- get extras submitted by intent
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
             return;
         }
-        //String output = extras.getString("topic");
-        //String output = Integer.toString(R.string.electrical_network)
-
-       //int[] main = structure.getStructure();
         int extraTopic = extras.getInt("topic");
 
-        //---- get list content for selected topic
+        //---- get list topic for selected main
         Structure structure = new Structure();
-        ArrayList<String> topic = structure.getTopic(extraTopic);
-
-        setContentView(R.layout.activity_topic);
+        final ArrayList<String> topic = structure.getTopic(extraTopic);
 
         setTitle(extraTopic);
 
@@ -47,9 +44,14 @@ public class TopicActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.activity_topic);
         assert listView != null;
         listView.setAdapter(itemsAdapter);
-
-        //TextView tv = (TextView) findViewById(R.id.textview);
-        //tv.setText(output[2]);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position , long id) {
+                Intent intent = new Intent(view.getContext(), ContentActivity.class);
+                intent.putExtra("content", topic.get(position));
+                startActivity(intent);
+            }
+        });
     }
 
 }
