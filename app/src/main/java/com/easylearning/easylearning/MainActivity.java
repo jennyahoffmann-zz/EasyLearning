@@ -6,6 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * Date: 25.11.16
+ * Author: Jenny Berger
+ * E-mail: jenny.a.berger@gmail.com
+ * Company: Robotics and Biology Laboratory (RBO)
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -16,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessageElectrostaticField(View view) {
         Intent intent = new Intent(this, TopicActivity.class);
-        //intent.putExtra("topic", "electrostaticField");
         intent.putExtra("topic", R.string.electrostatic_field);
         startActivity(intent);
     }
@@ -28,20 +34,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendMessageElectricalNetwork(View view) {
-        Intent intent = new Intent(this, TopicActivity.class);
+        /*Intent intent = new Intent(this, TopicActivity.class);
         intent.putExtra("topic", "electricalNetwork");
-        startActivity(intent);
+        startActivity(intent);*/
     }
 
     public void sendMessageStationaryMagneticField(View view) {
-        Intent intent = new Intent(this, TopicActivity.class);
+        /*Intent intent = new Intent(this, TopicActivity.class);
         intent.putExtra("topic", "stationaryMagneticField");
-        startActivity(intent);
+        startActivity(intent);*/
     }
 
     public void sendMessageElectromagneticField(View view) {
-        Intent intent = new Intent(this, TopicActivity.class);
+        /*Intent intent = new Intent(this, TopicActivity.class);
         intent.putExtra("topic", "electromagneticField");
-        startActivity(intent);
+        startActivity(intent);*/
     }
 }

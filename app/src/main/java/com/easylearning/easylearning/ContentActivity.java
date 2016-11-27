@@ -4,8 +4,19 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+
+/**
+ * Date: 25.11.16
+ * Author: Jenny Berger
+ * E-mail: jenny.a.berger@gmail.com
+ * Company: Robotics and Biology Laboratory (RBO)
+ */
 
 public class ContentActivity extends AppCompatActivity {
 
@@ -21,30 +32,16 @@ public class ContentActivity extends AppCompatActivity {
             return;
         }
         String extraContent = extras.getString("content");
-        String [] content = structure.getContent(extraContent);
+        ArrayList<String> content = structure.getContent(extraContent);
 
         setContentView(R.layout.activity_content);
 
         setTitle(extraContent);
 
-        final int N = content.length;
-        LinearLayout ll = (LinearLayout) findViewById(R.id.activity_content);
-        for (int i =0; i < N; i++) {
-            TextView tv = new TextView(this);
-            tv.setText(content[i]);
-            tv.setId(i + 5);
-            tv.setClickable(true);
-            tv.setTextSize(16);
-            tv.setPadding(0, 32, 0, 32);
-            final String out = content[i];
-            tv.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), ContentActivity.class);
-                    intent.putExtra("content", out);
-                    v.getContext().startActivity(intent);
-                }
-            });
-            ll.addView(tv);
-        }
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, content);
+        ListView listView = (ListView) findViewById(R.id.activity_content);
+        assert listView != null;
+        listView.setAdapter(itemsAdapter);
+
     }
 }

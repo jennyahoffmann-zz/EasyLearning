@@ -2,8 +2,14 @@ package com.easylearning.easylearning;
 
 import android.widget.Switch;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
- * Created by jenny on 25.11.16.
+ * Date: 25.11.16
+ * Author: Jenny Berger
+ * E-mail: jenny.a.berger@gmail.com
+ * Company: Robotics and Biology Laboratory (RBO)
  */
 
 public class Structure {
@@ -19,19 +25,19 @@ public class Structure {
     }
 
     //----------- Topic -----------//
-    private String[] electrostaticField = {"Elektrische Ladung", "Ladungsdichten", "Columb'sches Gestz", "Elektrische Feldstärke", "Überlagerung von Feldern", "Darstellung von Feldern", "Elektrische Spannungen und Potentiale", "Darstellung von Äquipotentiallinien und -flächen", "Influenz", "Dielektrische Polarisation", "Sprungestellen bei Dielektrizitätskonstanten"};
-    private String[] electricalFlowField = {"Ladungsträgerbewegung", "Elektrischer Strom", "Stromdichte", "Definition Stationäres Stromungsfeld", "Spezifische Leitfähigkeit und spezifischer Widerstand", "Ohm'sches Gesetz", " Praktische Ausführungsformen von Widerstanden", "Feldgrößen an Grenzflächen", "Energie und Leistung", "Energie- und Leistungsdichte"};
+    private ArrayList<String> electrostaticField = new ArrayList<>(Arrays.asList("Elektrische Ladung", "Ladungsdichten", "Columb'sches Gestz", "Elektrische Feldstärke", "Überlagerung von Feldern", "Darstellung von Feldern", "Elektrische Spannungen und Potentiale", "Darstellung von Äquipotentiallinien und -flächen", "Influenz", "Dielektrische Polarisation", "Sprungestellen bei Dielektrizitätskonstanten"));
+    private ArrayList<String> electricalFlowField = new ArrayList<>(Arrays.asList("Ladungsträgerbewegung", "Elektrischer Strom", "Stromdichte", "Definition Stationäres Stromungsfeld", "Spezifische Leitfähigkeit und spezifischer Widerstand", "Ohm'sches Gesetz", " Praktische Ausführungsformen von Widerstanden", "Feldgrößen an Grenzflächen", "Energie und Leistung", "Energie- und Leistungsdichte"));
 
-    public String[] getTopic(int i) {
+    public ArrayList<String> getTopic(int i) {
         if (i == R.string.electrostatic_field) {i = 0;}
         return selectTopic(Integer.toString(i));
     }
 
-    public String[] getTopic(String s) {
+    public ArrayList<String> getTopic(String s) {
         return selectTopic(s);
     }
 
-    private String[] selectTopic(String topic) {
+    private ArrayList<String> selectTopic(String topic) {
         switch (topic) {
             case "0":
             case "electrostaticField":
@@ -46,20 +52,20 @@ public class Structure {
     String q = "quiz";
 
     //........... electrical Charge ...........//
-    private String[] electricalCharge = {"Herleitung des Begriffs", "Ladungstrennung (Ionisation)", "Rekombination"};
-    private String[] chargeDensity = {"Linienladung", "Berechnung", "Ladungsträger im Festkörper"};
-    private String[] coulombsLaw = {"Herleitung", "Coulomb'sches Gesetz", "Mehrfache Kraftwirkung auf eine Punktladung"};
+    private ArrayList<String> electricalCharge = new ArrayList<>(Arrays.asList("Herleitung des Begriffs", "Ladungstrennung (Ionisation)", "Rekombination"));
+    private ArrayList<String> chargeDensity = new ArrayList<>(Arrays.asList("Linienladung", "Berechnung", "Ladungsträger im Festkörper"));
+    private ArrayList<String> coulombsLaw = new ArrayList<>(Arrays.asList("Herleitung", "Coulomb'sches Gesetz", "Mehrfache Kraftwirkung auf eine Punktladung"));
 
    /* public String[] getContent(int i) {
         if (i == R.string.electrostatic_field) {i = 0;}
         return selectTopic(Integer.toString(i));
     }*/
 
-    public String[] getContent(String s) {
+    public ArrayList<String> getContent(String s) {
         return selectContent(s);
     }
 
-    private String[] selectContent(String topic) {
+    private ArrayList<String> selectContent(String topic) {
         switch (topic) {
             case "0":
             case "Elektrische Ladung":
