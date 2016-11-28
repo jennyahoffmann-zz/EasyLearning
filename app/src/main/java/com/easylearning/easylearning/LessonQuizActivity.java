@@ -3,15 +3,74 @@ package com.easylearning.easylearning;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class LessonQuizActivity extends AppCompatActivity {
+
+    RadioButton r1;
+    RadioButton r2;
+    RadioButton r3;
+    RadioButton r4;
+
+    Quiz quiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_quiz);
+
+        Content content = new Content();
+        quiz = content.getQuiz();
+
+        TextView tv = (TextView) findViewById(R.id.textview_lesson_quiz);
+        tv.setText(quiz.getQuestion());
+
+        r1 = (RadioButton) findViewById(R.id.radio1);
+        r2 = (RadioButton) findViewById(R.id.radio2);
+        r3 = (RadioButton) findViewById(R.id.radio3);
+        r4 = (RadioButton) findViewById(R.id.radio4);
+
+        r1.setText(quiz.getOptions().get(0));
+        r2.setText(quiz.getOptions().get(1));
+        r3.setText(quiz.getOptions().get(2));
+        r4.setText(quiz.getOptions().get(3));
     }
 
-    public void sendMessageLessonQuiz(View view) {
+    public void sendMessageLessonQuizSubmit(View view) {
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        if(radioGroup.getCheckedRadioButtonId() == -1) {
+            return;
+        }
+
+        Button buttonSubmit = (Button) findViewById(R.id.button_lesson_quiz_submit);
+        buttonSubmit.setVisibility(View.GONE);
+
+//        if (radioGroup.getCheckedRadioButtonId())
+
+        RadioButton radio = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+        if (radio.getText() == quiz.getAnswer()) {
+
+            Button buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
+            buttonTryAgain.setVisibility(View.VISIBLE);
+            buttonTryAgain.setText("richtig");
+        } else {
+            Button buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
+            buttonTryAgain.setVisibility(View.VISIBLE);
+            buttonTryAgain.setText("falsch");
+        }
+
+
+//        Button buttonNext = (Button) findViewById(R.id.button_lesson_quiz_next);
+//        buttonNext.setVisibility(View.VISIBLE);
+
+    }
+
+    public void sendMessageLessonQuizTryAgain(View view) {
+    }
+
+    public void sendMessageLessonQuizNext(View view) {
     }
 }

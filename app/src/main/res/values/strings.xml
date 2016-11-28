@@ -7,4 +7,5 @@
     <string name="time_varying_electromagnetic_field">Zeitlich veränderliches elektromagnetisches Feld</string>
     <string name="next">weiter</string>
     <string name="submit">bestätigen</string>
+    <string name="try_again">nochmal versuchen</string>
 </resources>

@@ -11,6 +11,7 @@
     tools:context="com.easylearning.easylearning.LessonQuizActivity">
 
     <TextView
+        android:id="@+id/textview_lesson_quiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -20,27 +21,32 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:id="@+id/radiogroup">
 
         <RadioButton
+            android:id="@+id/radio1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="U=R*I"
             android:layout_margin="16dp"/>
 
         <RadioButton
+            android:id="@+id/radio2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="U=R/I"
             android:layout_margin="16dp"/>
 
         <RadioButton
+            android:id="@+id/radio3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="U=I/R"
             android:layout_margin="16dp"/>
 
         <RadioButton
+            android:id="@+id/radio4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I=R*U"
@@ -50,12 +56,32 @@
 
 
     <Button
-        android:id="@+id/button_lesson_text"
+        android:id="@+id/button_lesson_quiz_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:onClick="sendMessageLessonQuiz"
+        android:onClick="sendMessageLessonQuizSubmit"
         android:text="@string/submit" />
+
+    <Button
+        android:id="@+id/button_lesson_quiz_try_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="sendMessageLessonQuizTryAgain"
+        android:text="@string/try_again"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/button_lesson_quiz_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="sendMessageLessonQuizNext"
+        android:text="@string/next"
+        android:visibility="invisible"/>
 
 </RelativeLayout>
