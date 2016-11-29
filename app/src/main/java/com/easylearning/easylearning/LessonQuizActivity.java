@@ -1,5 +1,7 @@
 package com.easylearning.easylearning;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +11,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class LessonQuizActivity extends AppCompatActivity {
 
     RadioButton r1;
@@ -16,80 +20,120 @@ public class LessonQuizActivity extends AppCompatActivity {
     RadioButton r3;
     RadioButton r4;
 
-    Quiz quiz;
+    ArrayList<Quiz> quiz;
+
+    TextView tvQuestion;
+
+    TextView tvFeedback;
+
+    int count = 0;
+
+    Button buttonSubmit;
+    Button buttonTryAgain;
+    Button buttonNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_lesson_quiz);
 
-        Content content = new Content();
-        quiz = content.getQuiz();
+        //---- get extras submitted by intent
+        Bundle extras = getIntent().getExtras();
+        if (extras == null) {
+            return;
+        }
+        int countChunk = extras.getInt("countChunk");
 
-        TextView tv = (TextView) findViewById(R.id.textview_lesson_quiz);
-        tv.setText(quiz.getQuestion());
+        Content content = new Content();
+        ArrayList<Chunk> chunkList = content.getChunkList();
+        quiz = chunkList.get(countChunk).getQuiz();
+
+        tvQuestion = (TextView) findViewById(R.id.textview_lesson_quiz);
 
         r1 = (RadioButton) findViewById(R.id.radio1);
         r2 = (RadioButton) findViewById(R.id.radio2);
         r3 = (RadioButton) findViewById(R.id.radio3);
         r4 = (RadioButton) findViewById(R.id.radio4);
 
-        r1.setText(quiz.getOptions().get(0));
-        r2.setText(quiz.getOptions().get(1));
-        r3.setText(quiz.getOptions().get(2));
-        r4.setText(quiz.getOptions().get(3));
+        tvFeedback = (TextView) findViewById(R.id.textview_answer_feedback);
+
+        buttonSubmit = (Button) findViewById(R.id.button_lesson_quiz_submit);
+        buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
+        buttonNext = (Button) findViewById(R.id.button_lesson_quiz_next);
+
+        displayQuiz();
     }
 
     public void sendMessageLessonQuizSubmit(View view) {
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
-        if(radioGroup.getCheckedRadioButtonId() == -1) {
+        if (radioGroup.getCheckedRadioButtonId() == -1) {
             return;
         }
 
-        Button buttonSubmit = (Button) findViewById(R.id.button_lesson_quiz_submit);
         buttonSubmit.setVisibility(View.GONE);
 
         RadioButton clickedRadio = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
-        if (clickedRadio.getText() == quiz.getAnswer()) {
-            Button buttonNext = (Button) findViewById(R.id.button_lesson_quiz_next);
+        if (clickedRadio.getText() == quiz.get(count).getAnswer()) { //--- answer is correct
             buttonNext.setVisibility(View.VISIBLE);
-
-            TextView tv = (TextView) findViewById(R.id.textview_answer_feedback);
-            tv.setTextColor(Color.GREEN);
-            tv.setText(R.string.right);
-            tv.setVisibility(View.VISIBLE);
+            tvFeedback.setTextColor(Color.GREEN);
+            tvFeedback.setText(R.string.right);
+            tvFeedback.setVisibility(View.VISIBLE);
             radioGroup.setEnabled(false);
-            r1.setClickable(false);
-            r2.setClickable(false);
-            r3.setClickable(false);
-            r4.setClickable(false);
-        } else {
-            Button buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
+            disableRadioButtons();
+            count++;
+        } else { //--- answer is wrong
             buttonTryAgain.setVisibility(View.VISIBLE);
-            TextView tv = (TextView) findViewById(R.id.textview_answer_feedback);
-            tv.setTextColor(Color.RED);
-            tv.setText(R.string.wrong);
-            tv.setVisibility(View.VISIBLE);
-            r1.setClickable(false);
-            r2.setClickable(false);
-            r3.setClickable(false);
-            r4.setClickable(false);
+            tvFeedback.setTextColor(Color.RED);
+            tvFeedback.setText(R.string.wrong);
+            tvFeedback.setVisibility(View.VISIBLE);
+            disableRadioButtons();
         }
     }
 
     public void sendMessageLessonQuizTryAgain(View view) {
-        Button buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
         buttonTryAgain.setVisibility(View.GONE);
-        r1.setClickable(true);
-        r2.setClickable(true);
-        r3.setClickable(true);
-        r4.setClickable(true);
-        TextView tv = (TextView) findViewById(R.id.textview_answer_feedback);
-        tv.setVisibility(View.INVISIBLE);
-        Button buttonSubmit = (Button) findViewById(R.id.button_lesson_quiz_submit);
+        enableRadioButtons();
+        tvFeedback.setVisibility(View.INVISIBLE);
         buttonSubmit.setVisibility(View.VISIBLE);
     }
 
     public void sendMessageLessonQuizNext(View view) {
+        //--- if more quizzes for this chunk available
+        if (quiz.size() > count) {
+            displayQuiz();
+            enableRadioButtons();
+            tvFeedback.setVisibility(View.INVISIBLE);
+            buttonNext.setVisibility(View.INVISIBLE);
+            buttonSubmit.setVisibility(View.VISIBLE);
+        } else {
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("result",1);
+            setResult(Activity.RESULT_OK,returnIntent);
+            finish();
+        }
+    }
+
+    public void displayQuiz () {
+        tvQuestion.setText(quiz.get(count).getQuestion());
+
+        r1.setText(quiz.get(count).getOptions().get(0));
+        r2.setText(quiz.get(count).getOptions().get(1));
+        r3.setText(quiz.get(count).getOptions().get(2));
+        r4.setText(quiz.get(count).getOptions().get(3));
+    }
+
+    private void disableRadioButtons() {
+        r1.setClickable(false);
+        r2.setClickable(false);
+        r3.setClickable(false);
+        r4.setClickable(false);
+    }
+
+    public void enableRadioButtons() {
+        r1.setClickable(true);
+        r2.setClickable(true);
+        r3.setClickable(true);
+        r4.setClickable(true);
     }
 }

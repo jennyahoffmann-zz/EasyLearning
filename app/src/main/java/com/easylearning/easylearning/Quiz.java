@@ -17,9 +17,13 @@ public class Quiz {
     private ArrayList<String> mOptions = new ArrayList<>();
     private String mAnswer;
 
-    public Quiz(String question, String answer) {
+    public Quiz(String question, String op1, String op2, String op3, String op4, String answer) {
         mQuestion = question;
         mAnswer = answer;
+        mOptions.add(op1);
+        mOptions.add(op2);
+        mOptions.add(op3);
+        mOptions.add(op4);
     }
 
     public Quiz() {
