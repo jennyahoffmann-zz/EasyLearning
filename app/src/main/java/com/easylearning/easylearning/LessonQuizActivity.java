@@ -49,13 +49,11 @@ public class LessonQuizActivity extends AppCompatActivity {
         Button buttonSubmit = (Button) findViewById(R.id.button_lesson_quiz_submit);
         buttonSubmit.setVisibility(View.GONE);
 
-//        if (radioGroup.getCheckedRadioButtonId())
-
         RadioButton clickedRadio = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
         if (clickedRadio.getText() == quiz.getAnswer()) {
+            Button buttonNext = (Button) findViewById(R.id.button_lesson_quiz_next);
+            buttonNext.setVisibility(View.VISIBLE);
 
-            Button buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
-            buttonTryAgain.setVisibility(View.VISIBLE);
             TextView tv = (TextView) findViewById(R.id.textview_answer_feedback);
             tv.setTextColor(Color.GREEN);
             tv.setText(R.string.right);
@@ -66,8 +64,8 @@ public class LessonQuizActivity extends AppCompatActivity {
             r3.setClickable(false);
             r4.setClickable(false);
         } else {
-            Button buttonNext = (Button) findViewById(R.id.button_lesson_quiz_next);
-            buttonNext.setVisibility(View.VISIBLE);
+            Button buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
+            buttonTryAgain.setVisibility(View.VISIBLE);
             TextView tv = (TextView) findViewById(R.id.textview_answer_feedback);
             tv.setTextColor(Color.RED);
             tv.setText(R.string.wrong);
@@ -77,13 +75,19 @@ public class LessonQuizActivity extends AppCompatActivity {
             r3.setClickable(false);
             r4.setClickable(false);
         }
-
-//        Button buttonNext = (Button) findViewById(R.id.button_lesson_quiz_next);
-//        buttonNext.setVisibility(View.VISIBLE);
-
     }
 
     public void sendMessageLessonQuizTryAgain(View view) {
+        Button buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
+        buttonTryAgain.setVisibility(View.GONE);
+        r1.setClickable(true);
+        r2.setClickable(true);
+        r3.setClickable(true);
+        r4.setClickable(true);
+        TextView tv = (TextView) findViewById(R.id.textview_answer_feedback);
+        tv.setVisibility(View.INVISIBLE);
+        Button buttonSubmit = (Button) findViewById(R.id.button_lesson_quiz_submit);
+        buttonSubmit.setVisibility(View.VISIBLE);
     }
 
     public void sendMessageLessonQuizNext(View view) {
