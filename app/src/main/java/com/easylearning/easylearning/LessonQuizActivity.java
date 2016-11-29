@@ -1,5 +1,6 @@
 package com.easylearning.easylearning;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -50,18 +51,32 @@ public class LessonQuizActivity extends AppCompatActivity {
 
 //        if (radioGroup.getCheckedRadioButtonId())
 
-        RadioButton radio = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
-        if (radio.getText() == quiz.getAnswer()) {
+        RadioButton clickedRadio = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+        if (clickedRadio.getText() == quiz.getAnswer()) {
 
             Button buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
             buttonTryAgain.setVisibility(View.VISIBLE);
-            buttonTryAgain.setText("richtig");
+            TextView tv = (TextView) findViewById(R.id.textview_answer_feedback);
+            tv.setTextColor(Color.GREEN);
+            tv.setText(R.string.right);
+            tv.setVisibility(View.VISIBLE);
+            radioGroup.setEnabled(false);
+            r1.setClickable(false);
+            r2.setClickable(false);
+            r3.setClickable(false);
+            r4.setClickable(false);
         } else {
             Button buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
             buttonTryAgain.setVisibility(View.VISIBLE);
-            buttonTryAgain.setText("falsch");
+            TextView tv = (TextView) findViewById(R.id.textview_answer_feedback);
+            tv.setTextColor(Color.RED);
+            tv.setText(R.string.wrong);
+            tv.setVisibility(View.VISIBLE);
+            r1.setClickable(false);
+            r2.setClickable(false);
+            r3.setClickable(false);
+            r4.setClickable(false);
         }
-
 
 //        Button buttonNext = (Button) findViewById(R.id.button_lesson_quiz_next);
 //        buttonNext.setVisibility(View.VISIBLE);
