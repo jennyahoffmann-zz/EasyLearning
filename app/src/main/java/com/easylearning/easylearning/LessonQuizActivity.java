@@ -45,10 +45,12 @@ public class LessonQuizActivity extends AppCompatActivity {
         }
         int countChunk = extras.getInt("countChunk");
 
+        //---- get Chunk for selected unit
         Content content = new Content();
         ArrayList<Chunk> chunkList = content.getChunkList();
         quiz = chunkList.get(countChunk).getQuiz();
 
+        //---- init layout
         tvQuestion = (TextView) findViewById(R.id.textview_lesson_quiz);
 
         r1 = (RadioButton) findViewById(R.id.radio1);
@@ -62,6 +64,7 @@ public class LessonQuizActivity extends AppCompatActivity {
         buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
         buttonNext = (Button) findViewById(R.id.button_lesson_quiz_next);
 
+        //---- display first quiz from Chunk related to text
         displayQuiz();
     }
 
@@ -73,8 +76,11 @@ public class LessonQuizActivity extends AppCompatActivity {
 
         buttonSubmit.setVisibility(View.GONE);
 
+        //---- get clicked button
         RadioButton clickedRadio = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
-        if (clickedRadio.getText() == quiz.get(count).getAnswer()) { //--- answer is correct
+
+       if (clickedRadio.getText() == quiz.get(count).getAnswer()) {
+           //---- answer is correct
             buttonNext.setVisibility(View.VISIBLE);
             tvFeedback.setTextColor(Color.GREEN);
             tvFeedback.setText(R.string.right);
@@ -82,7 +88,8 @@ public class LessonQuizActivity extends AppCompatActivity {
             radioGroup.setEnabled(false);
             disableRadioButtons();
             count++;
-        } else { //--- answer is wrong
+        } else {
+           //---- answer is wrong
             buttonTryAgain.setVisibility(View.VISIBLE);
             tvFeedback.setTextColor(Color.RED);
             tvFeedback.setText(R.string.wrong);
@@ -101,12 +108,14 @@ public class LessonQuizActivity extends AppCompatActivity {
     public void sendMessageLessonQuizNext(View view) {
         //--- if more quizzes for this chunk available
         if (quiz.size() > count) {
+            //---- display next quiz
             displayQuiz();
             enableRadioButtons();
             tvFeedback.setVisibility(View.INVISIBLE);
             buttonNext.setVisibility(View.INVISIBLE);
             buttonSubmit.setVisibility(View.VISIBLE);
         } else {
+            //---- close Activity and go back to previous activity
             Intent returnIntent = new Intent();
             returnIntent.putExtra("result",1);
             setResult(Activity.RESULT_OK,returnIntent);

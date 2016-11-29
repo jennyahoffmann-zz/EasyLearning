@@ -21,14 +21,17 @@ public class LessonTextActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_lesson_text);
 
+        //---- get Chunk for selected unit
         Content content = new Content();
         chunkList = content.getChunkList();
 
+        //---- init views
         tv = (TextView) findViewById(R.id.textview_lesson_text);
         tvCount = (TextView) findViewById(R.id.tv_countText);
+
+        //---- display first text from Chunk
         displayText();
     }
 
@@ -49,11 +52,14 @@ public class LessonTextActivity extends AppCompatActivity {
     }
 
     private void displayText() {
+        //---- if still content in Chunk
         if (chunkList.size() > countText) {
+            //---- display next text from Chunk
             tv.setText(chunkList.get(countText).getText());
             String count = Integer.toString(countText);
             tvCount.setText(count);
         } else {
+            //---- close this activity and go back to ContentActivity
             finish();
         }
     }

@@ -37,8 +37,10 @@ public class ContentActivity extends AppCompatActivity {
         Structure structure = new Structure();
         final ArrayList<String> content = structure.getContent(extraContent);
 
+        //---- change action bar text
         setTitle(extraContent);
 
+        //---- generate List from selected content
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, content);
         ListView listView = (ListView) findViewById(R.id.activity_content);
         assert listView != null;

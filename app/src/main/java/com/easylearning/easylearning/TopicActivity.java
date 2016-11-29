@@ -38,8 +38,10 @@ public class TopicActivity extends AppCompatActivity {
         Structure structure = new Structure();
         final ArrayList<String> topic = structure.getTopic(extraTopic);
 
+        //---- change action bar text
         setTitle(extraTopic);
 
+        //---- generate List from selected topic
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, topic);
         ListView listView = (ListView) findViewById(R.id.activity_topic);
         assert listView != null;
