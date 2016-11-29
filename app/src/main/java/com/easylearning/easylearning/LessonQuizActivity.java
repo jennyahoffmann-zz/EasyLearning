@@ -66,8 +66,8 @@ public class LessonQuizActivity extends AppCompatActivity {
             r3.setClickable(false);
             r4.setClickable(false);
         } else {
-            Button buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
-            buttonTryAgain.setVisibility(View.VISIBLE);
+            Button buttonNext = (Button) findViewById(R.id.button_lesson_quiz_next);
+            buttonNext.setVisibility(View.VISIBLE);
             TextView tv = (TextView) findViewById(R.id.textview_answer_feedback);
             tv.setTextColor(Color.RED);
             tv.setText(R.string.wrong);
