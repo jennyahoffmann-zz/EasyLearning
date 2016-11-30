@@ -73,4 +73,12 @@ public class Content {
 
         return chunkList;
     }
+
+    public ArrayList<Quiz> getAllQuizzes() {
+        ArrayList<Quiz> quizList = new ArrayList<>();
+        quizList.add(derivationChargeQuiz1);
+        quizList.add(derivationChargeQuiz2);
+        quizList.add(derivationChargeQuiz21);
+        return quizList;
+    }
 }

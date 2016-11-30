@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".ModeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,14 +17,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TopicActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ContentActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LessonTextActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".LessonQuizActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".TopicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LessonTextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LessonQuizActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ShuffleQuizActivity"></activity>
     </application>
 
 </manifest>
