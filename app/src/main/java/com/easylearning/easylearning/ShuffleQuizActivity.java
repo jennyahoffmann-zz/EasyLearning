@@ -16,6 +16,7 @@ import java.util.Random;
 
 public class ShuffleQuizActivity extends AppCompatActivity {
 
+    RadioGroup radioGroup;
     RadioButton r1;
     RadioButton r2;
     RadioButton r3;
@@ -48,6 +49,7 @@ public class ShuffleQuizActivity extends AppCompatActivity {
         //---- init layout
         tvQuestion = (TextView) findViewById(R.id.textview_lesson_quiz);
 
+        radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
         r1 = (RadioButton) findViewById(R.id.radio1);
         r2 = (RadioButton) findViewById(R.id.radio2);
         r3 = (RadioButton) findViewById(R.id.radio3);
@@ -68,7 +70,6 @@ public class ShuffleQuizActivity extends AppCompatActivity {
     }
 
     public void sendMessageLessonQuizSubmit(View view) {
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
         if (radioGroup.getCheckedRadioButtonId() == -1) {
             return;
         }
@@ -141,6 +142,7 @@ public class ShuffleQuizActivity extends AppCompatActivity {
     }
 
     public void enableRadioButtons() {
+        radioGroup.clearCheck();
         r1.setClickable(true);
         r2.setClickable(true);
         r3.setClickable(true);

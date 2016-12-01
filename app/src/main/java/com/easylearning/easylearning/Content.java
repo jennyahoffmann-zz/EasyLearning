@@ -97,6 +97,7 @@ public class Content {
                 quizList.add(derivationChargeQuiz4);
                 chunk.setQuiz(quizList);
                 chunkList.add(chunk);
+                break;
             case "Ladungstrennung (Ionisation)":
                 chunk.setText(ionisation);
                 quizList.add(ionisation1);
