@@ -49,7 +49,7 @@ public class ContentActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position , long id) {
                 Intent intent = new Intent(view.getContext(), LessonTextActivity.class);
-                intent.putExtra("content", content.get(position));
+                intent.putExtra("unit", content.get(position));
                 startActivity(intent);
             }
         });

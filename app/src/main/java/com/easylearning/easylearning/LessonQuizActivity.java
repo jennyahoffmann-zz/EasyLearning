@@ -50,7 +50,7 @@ public class LessonQuizActivity extends AppCompatActivity {
 
         //---- get Chunk for selected unit
         Content content = new Content();
-        ArrayList<Chunk> chunkList = content.getChunkList();
+        ArrayList<Chunk> chunkList = content.getChunkList(extras.getString("unit"));
         quiz = chunkList.get(countChunk).getQuiz();
 
         //---- init layout

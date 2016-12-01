@@ -83,28 +83,28 @@ public class Content {
             "Anion"
     );
 
-    public ArrayList<Chunk> getChunkList() {
+    public ArrayList<Chunk> getChunkList(String content) {
         ArrayList<Chunk> chunkList = new ArrayList<>();
         Chunk chunk = new Chunk();
         ArrayList<Quiz> quizList = new ArrayList<>();
 
-        chunk.setText(derivationChargeText);
-        quizList.add(derivationChargeQuiz1);
-        quizList.add(derivationChargeQuiz2);
-        quizList.add(derivationChargeQuiz3);
-        quizList.add(derivationChargeQuiz4);
-        chunk.setQuiz(quizList);
-        chunkList.add(chunk);
-
-        Chunk chunk2 = new Chunk();
-        ArrayList<Quiz> quizList2 = new ArrayList<>();
-        chunk2.setText(ionisation);
-        quizList2.add(ionisation1);
-        quizList2.add(ionisation2);
-        quizList2.add(ionisation3);
-        chunk2.setQuiz(quizList2);
-        chunkList.add(chunk2);
-
+        switch (content) {
+            case "Herleitung: Ladung":
+                chunk.setText(derivationChargeText);
+                quizList.add(derivationChargeQuiz1);
+                quizList.add(derivationChargeQuiz2);
+                quizList.add(derivationChargeQuiz3);
+                quizList.add(derivationChargeQuiz4);
+                chunk.setQuiz(quizList);
+                chunkList.add(chunk);
+            case "Ladungstrennung (Ionisation)":
+                chunk.setText(ionisation);
+                quizList.add(ionisation1);
+                quizList.add(ionisation2);
+                quizList.add(ionisation3);
+                chunk.setQuiz(quizList);
+                chunkList.add(chunk);
+        }
         return chunkList;
     }
 

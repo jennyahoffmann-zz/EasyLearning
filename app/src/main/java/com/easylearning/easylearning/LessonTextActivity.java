@@ -17,14 +17,23 @@ public class LessonTextActivity extends AppCompatActivity {
 
     TextView tv;
 
+    String extraUnit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_text);
 
+        //---- get extras submitted by intent
+        Bundle extras = getIntent().getExtras();
+        if (extras == null) {
+            return;
+        }
+        extraUnit = extras.getString("unit");
+
         //---- get Chunk for selected unit
         Content content = new Content();
-        chunkList = content.getChunkList();
+        chunkList = content.getChunkList(extraUnit);
 
         //---- init views
         tv = (TextView) findViewById(R.id.textview_lesson_text);
@@ -36,6 +45,7 @@ public class LessonTextActivity extends AppCompatActivity {
     public void sendMessageLessonText(View view) {
         Intent intent = new Intent(this, LessonQuizActivity.class);
         intent.putExtra("countChunk", countText);
+        intent.putExtra("unit", extraUnit);
         startActivityForResult(intent, 1);
     }
 
