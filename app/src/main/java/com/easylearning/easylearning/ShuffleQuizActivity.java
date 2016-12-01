@@ -118,10 +118,19 @@ public class ShuffleQuizActivity extends AppCompatActivity {
     public void displayQuiz() {
         tvQuestion.setText(quiz.get(index).getQuestion());
 
-        r1.setText(quiz.get(index).getOptions().get(0));
-        r2.setText(quiz.get(index).getOptions().get(1));
-        r3.setText(quiz.get(index).getOptions().get(2));
-        r4.setText(quiz.get(index).getOptions().get(3));
+        int[] arr = {0,1,2,3};
+        rnd = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            int index = rnd.nextInt(arr.length );
+            int a = arr[index];
+            arr[index] = arr[i];
+            arr[i] = a;
+        }
+
+        r1.setText(quiz.get(index).getOptions().get(arr[0]));
+        r2.setText(quiz.get(index).getOptions().get(arr[1]));
+        r3.setText(quiz.get(index).getOptions().get(arr[2]));
+        r4.setText(quiz.get(index).getOptions().get(arr[3]));
     }
 
     private void disableRadioButtons() {

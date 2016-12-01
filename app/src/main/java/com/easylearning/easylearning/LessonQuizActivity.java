@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class LessonQuizActivity extends AppCompatActivity {
 
@@ -31,6 +32,8 @@ public class LessonQuizActivity extends AppCompatActivity {
     Button buttonSubmit;
     Button buttonTryAgain;
     Button buttonNext;
+
+    Random rnd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +66,8 @@ public class LessonQuizActivity extends AppCompatActivity {
         buttonSubmit = (Button) findViewById(R.id.button_lesson_quiz_submit);
         buttonTryAgain = (Button) findViewById(R.id.button_lesson_quiz_try_again);
         buttonNext = (Button) findViewById(R.id.button_lesson_quiz_next);
+
+        rnd = new Random();
 
         //---- display first quiz from Chunk related to text
         displayQuiz();
@@ -126,10 +131,18 @@ public class LessonQuizActivity extends AppCompatActivity {
     public void displayQuiz () {
         tvQuestion.setText(quiz.get(count).getQuestion());
 
-        r1.setText(quiz.get(count).getOptions().get(0));
-        r2.setText(quiz.get(count).getOptions().get(1));
-        r3.setText(quiz.get(count).getOptions().get(2));
-        r4.setText(quiz.get(count).getOptions().get(3));
+         int[] arr = {0,1,2,3};
+        for (int i = 0; i < arr.length; i++) {
+            int index = rnd.nextInt(arr.length);
+            int a = arr[index];
+            arr[index] = arr[i];
+            arr[i] = a;
+        }
+
+        r1.setText(quiz.get(count).getOptions().get(arr[0]));
+        r2.setText(quiz.get(count).getOptions().get(arr[1]));
+        r3.setText(quiz.get(count).getOptions().get(arr[2]));
+        r4.setText(quiz.get(count).getOptions().get(arr[3]));
     }
 
     private void disableRadioButtons() {
