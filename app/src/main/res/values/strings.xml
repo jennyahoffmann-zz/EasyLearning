@@ -10,4 +10,5 @@
     <string name="try_again">nochmal versuchen</string>
     <string name="right">RICHTIG</string>
     <string name="wrong">FALSCH</string>
+    <string name="STRING_TOKEN_SPLITTER">;</string>
 </resources>

@@ -1,15 +1,16 @@
 package com.easylearning.easylearning;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.easylearning.easylearning.model.Content;
+import com.easylearning.easylearning.model.Quiz;
 
 import java.util.ArrayList;
 import java.util.Random;

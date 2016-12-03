@@ -3,15 +3,19 @@ package com.easylearning.easylearning;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.easylearning.easylearning.model.Chunk;
+import com.easylearning.easylearning.model.Content;
+import com.easylearning.easylearning.model.Quiz;
+
+import java.util.List;
 import java.util.Random;
 
 public class LessonQuizActivity extends AppCompatActivity {
@@ -22,7 +26,7 @@ public class LessonQuizActivity extends AppCompatActivity {
     RadioButton r3;
     RadioButton r4;
 
-    ArrayList<Quiz> quiz;
+    List<Quiz> quiz;
 
     TextView tvQuestion;
 
@@ -51,7 +55,7 @@ public class LessonQuizActivity extends AppCompatActivity {
 
         //---- get Chunk for selected unit
         Content content = new Content();
-        ArrayList<Chunk> chunkList = content.getChunkList(extras.getString("unit"));
+        List<Chunk> chunkList = content.getChunkList(extras.getString("unit"));
         quiz = chunkList.get(countChunk).getQuiz();
 
         //---- init layout
