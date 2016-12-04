@@ -30,7 +30,7 @@ public class Content {
 
     private Quiz derivationChargeQuiz1 = new Quiz(
             "Welchen Wert hat die Elementarladung?",
-            "e = 1,6351892·10⁻¹²As", "e = 1,6351892·10⁻¹²C", "e = 1,6351892·10⁻¹⁹As", "e = 1,6021892·10⁻¹⁹As",
+            "e = 1,6351892·10⁻¹²As", "e = 1,6021892·10⁻¹²C", "e = 1,6351892·10⁻¹⁹As", "e = 1,6021892·10⁻¹⁹As",
             "e = 1,6021892·10⁻¹⁹As"
     );
 
@@ -128,7 +128,7 @@ public class Content {
 
     private Quiz lineChargeQuiz5 = new Quiz(
             "Wie ist die Einheit der Flächenladungsdichte?",
-            "[σ] = As/m²", "[σ] = As/m", "σ] = C/m", "[σ] = m/As",
+            "[σ] = As/m²", "[σ] = As/m", "[σ] = C/m", "[σ] = m/As",
             "[σ] = As/m²"
     );
 
@@ -173,14 +173,14 @@ public class Content {
             "In Isolatoren sind alle Elektronen an Atome gebunden und können sich damit nicht quasi frei bewegen.\n\n" +
             "Elektronen der äußeren Orbitale sind nicht mehr einzelnen Atomen zugeordnet.\n" +
             "Diese, sich quasi frei bewegenden Elektronen, werden Valenzelektronen genannt.\n\n" +
-                    "Berechnung der Valenzelektronendichte n:\n\n" +
-                    "n = NA·Z·ρm·Mm⁻¹\n\n" +
-                    "NA = 6,02214·10²³ Atome/mol … Avogadrokonstante\n" +
-                    "Z … Zahl der Valenzelektronen pro Atom" +
-                    "ρm … Materialdichtein g/cm³\n" +
-                    "Mm … molare Masse in g/mol\n\n\n" +
-                    "Berechnung der Raumladungsdichte über Valenzelektronen:\n\n" +
-                    "ρ = dQ/dV = -e·n";
+            "Berechnung der Valenzelektronendichte n:\n\n" +
+            "n = NA·Z·ρm·Mm⁻¹\n\n" +
+            "NA = 6,02214·10²³ Atome/mol … Avogadrokonstante\n" +
+            "Z … Zahl der Valenzelektronen pro Atom\n" +
+            "ρm … Materialdichtein g/cm³\n" +
+            "Mm … molare Masse in g/mol\n\n\n" +
+            "Berechnung der Raumladungsdichte über Valenzelektronen:\n\n" +
+            "ρ = dQ/dV = -e·n";
 
     private Quiz loadCarrierInSolidStateQuiz1 = new Quiz(
             "Mit welcher Formel lässt sich die Valenzelektronendichte berechnen?",
@@ -200,11 +200,85 @@ public class Content {
             "ρ = -e·n"
     );
 
+    //----------- coulomb's law ----------//
+
+    private String derivationCoulombsLawText =
+            "Die Kraft F ist betragsmäßig proportoinal zwischen zwei Ladungen und umgekehrt proprtional zum Quadrat des Abstandes r.\n\n" +
+                    "F ~ Q1·Q2/r²\n\n" +
+                    "Mit der Proportionalitätskonstanten 1/(4πε0) ergibt sich\n\n" +
+                    "F = 1/(4πε0) · Q1·Q2/r²  (im Vakuum)\n\n" +
+                    "ε0 = 8,854·10⁻¹² As/Vm … elektrische Feldkonstante (auch Dielekrtizitätskonstante)\n\n" +
+                    "Nun fehlt noch die Richtung der Kraft die mit einem Einheitsvektor von Punktladung Q1 zur Punktladung Q2 zeigt. Das heißt die Kraft wirkt von Q2 auf Q1.\n\n" +
+                    "vec{F} = 1/(4·π·ε0) · Q1·Q2/|vec{r1}-vec{r2}|² · vec{e12}\n" +
+                    "vec{e12} = vec{r1}-vec{r2} / |vec{r1}-vec{r2}|" +
+                    "vec{F} = 1/(4·π·ε0) · Q1·Q2/r² · vec{er}\n\n" +
+                    "Die Eineit der Proportionalitätskonstanten ist:" +
+                    "[ε0] = [Q²] / [r²]·[F] = A²·s²/m²N = As/Vm\n\n" +
+                    "1Ws = 1VAs = 1Nm";
+
+    private Quiz derivationCoulombsLawQuiz1 = new Quiz(
+            "Was beschreibt das Coulomb'sche Gesetz?",
+            "Kraftwirkung zwischen zwei Punktladungen", "gerichtete Bewegung von Ladungen", "Abstoßen gleicher Ladungen und anziehen ungleicher Ladungen", "Strom fließt immer vom positivem Pol des Spannungserzeugers über den Verbraucher zum negativem Pol",
+            "Kraftwirkung zwischen zwei Punktladungen"
+    );
+
+    private Quiz derivationCoulombsLawQuiz2 = new Quiz(
+            "Welche Formel dient zur Berechnung der Kraft zwischen zwei Punktladungen?",
+            "vec{F} = 1/(4·π·ε0) · Q1·Q2/r² · vec{er}", "vec{F} = 1/(4·π·r²) · Q1·Q2 · vec{er}", "vec{F} = 4/(π·ε0) · Q1·Q2/r² · vec{er}", "vec{F} = 1/(4·π·ε0) · Q1·Q2 · vec{er}",
+            "vec{F} = 1/(4·π·ε0) · Q1·Q2/r² · vec{er}"
+    );
+
+    private Quiz derivationCoulombsLawQuiz3 = new Quiz(
+            "Welche Einheit hat die Coulombkraft?",
+            "N", "As", "As/Vm", "Nm",
+            "N"
+    );
+
+    private Quiz derivationCoulombsLawQuiz4 = new Quiz(
+            "Welche Einheit hat die Proportionalitätskonstante?",
+            "As/Vm", "As", "N", "Nm",
+            "As/Vm"
+    );
+
+    private Quiz derivationCoulombsLawQuiz5 = new Quiz(
+            "Welche Formel dient zur Berechnung des Coulomb'schen Gesetzes?",
+            "vec{F} = 1/(4·π·ε0) · Q1·Q2/r² · vec{er}", "Q = N·e", "n = NA·Z·ρm·Mm⁻¹", "U = R·I",
+            "vec{F} = 1/(4·π·ε0) · Q1·Q2/r² · vec{er}"
+    );
+
+    private String multiplesForceActionText =
+            "Die Ladungen mit Index i wirken auf die Ladung mit dem Index n.\n\n" +
+                    "vec{Fn,i} = Qn·Qi / 4·π·ε0·rn,i² vec{ern,i}\n\n" +
+                    "= Summe aller Teilkräfte auf Ladung Qn:\n\n" +
+                    "vec{Fn} = Σ(vec{Fn,i}) von i=1 bis n-1\n\n\n" +
+                    "Die der Kräfte aller Ladungen ist 0.\n\n" +
+                    "Überlagerungssatz:\n\n" +
+                    "vec{Fn} = Qn/4·π·ε0 · Σ(Qi/ri,n²) · vec{eri,n}";
+
+    private Quiz multiplesForceActionQuiz1 = new Quiz(
+            "Wie lautet das Überlagerungsgesetz?",
+            "vec{Fn} = Qn/4·π·ε0 · Σ(Qi/ri,n²) · vec{eri,n}", "vec{Fn} = Qn/4·π·ε0 · Σ(Qi/ri,n²) · vec{ern,i}", "vec{Fn} = Qn/4·π·ε0 · Qi/ri,n² · vec{eri,n}", "vec{Fn} = Qn/4·π·ε0 · Σ(Qi/rn,i²) vec{eri,n}",
+            "vec{Fn} = Qn/4·π·ε0 · Σ(Qi/ri,n²) · vec{eri,n}"
+    );
+
+
+    private Quiz multiplesForceActionQuiz2 = new Quiz(
+            "Worauf wirkt die Kraft bei der Formel vec{Fi,j} = 1/4·π·ε0 · Qi·Qj/ri,n² · vec{eri,n}?",
+            "auf Qi", "auf Qj", "Senkrecht zur Geraden durch Q1 und Q2", "es wirkt keine Kraft",
+            "auf Qi"
+    );
+
+    private Quiz multiplesForceActionQuiz3 = new Quiz(
+            "Welche Ladung verursacht die Kraft bei der Formel vec{Fi,j} = 1/4·π·ε0 · Qi·Qj/ri,n² · vec{eri,n}?",
+            "Qj", "Qi", "beide Ladungen", "es wirkt keine Kraft",
+            "Qj"
+    );
+
     //----------- extra quiz questions ----------//
 
     private Quiz electricCurrentQuiz = new Quiz(
             "Was verseht man unter elektrischem Strom?",
-            "gerichtete Bewegung von Ladungen", "gerichtete Bewegung von Atomen", "Ionisierung von Atomen", "Anziehen gleicher Ladungen",
+            "gerichtete Bewegung von Ladungen", "gerichtete Bewegung von Atomen", "Ionisierung von Atomen", "Abstoßen gleicher Ladungen und anziehen ungleicher Ladungen",
             "gerichtete Bewegung von Ladungen"
     );
 
@@ -240,9 +314,6 @@ public class Content {
                 quizList.add(lineChargeQuiz4);
                 quizList.add(lineChargeQuiz5);
                 quizList.add(lineChargeQuiz6);
-                quizList.add(computationOfChargeDensityQuiz1);
-                quizList.add(computationOfChargeDensityQuiz2);
-                quizList.add(computationOfChargeDensityQuiz3);
                 chunk.setQuiz(quizList);
                 chunkList.add(chunk);
                 break;
@@ -251,12 +322,34 @@ public class Content {
                 quizList.add(computationOfChargeDensityQuiz1);
                 quizList.add(computationOfChargeDensityQuiz2);
                 quizList.add(computationOfChargeDensityQuiz3);
+                chunk.setQuiz(quizList);
+                chunkList.add(chunk);
                 break;
             case "Ladungsträger im Festkörper":
                 chunk.setText(loadCarrierInSolidStateText);
                 quizList.add(loadCarrierInSolidStateQuiz1);
                 quizList.add(loadCarrierInSolidStateQuiz2);
                 quizList.add(loadCarrierInSolidStateQuiz3);
+                chunk.setQuiz(quizList);
+                chunkList.add(chunk);
+                break;
+            case "Herleitung: Coulomb'sches Gesetz":
+                chunk.setText(derivationCoulombsLawText);
+                quizList.add(derivationCoulombsLawQuiz1);
+                quizList.add(derivationCoulombsLawQuiz2);
+                quizList.add(derivationCoulombsLawQuiz3);
+                quizList.add(derivationCoulombsLawQuiz4);
+                chunk.setQuiz(quizList);
+                chunkList.add(chunk);
+                break;
+            case "Mehrfache Kraftwirkung auf eine Punktladung":
+                chunk.setText(multiplesForceActionText);
+                quizList.add(multiplesForceActionQuiz1);
+                quizList.add(multiplesForceActionQuiz2);
+                quizList.add(multiplesForceActionQuiz3);
+                chunk.setQuiz(quizList);
+                chunkList.add(chunk);
+                break;
         }
         return chunkList;
     }
@@ -283,6 +376,14 @@ public class Content {
         quizList.add(loadCarrierInSolidStateQuiz1);
         quizList.add(loadCarrierInSolidStateQuiz2);
         quizList.add(loadCarrierInSolidStateQuiz3);
+        quizList.add(derivationCoulombsLawQuiz1);
+        quizList.add(derivationCoulombsLawQuiz2);
+        quizList.add(derivationCoulombsLawQuiz3);
+        quizList.add(derivationCoulombsLawQuiz4);
+        quizList.add(derivationCoulombsLawQuiz5);
+        quizList.add(multiplesForceActionQuiz1);
+        quizList.add(multiplesForceActionQuiz2);
+        quizList.add(multiplesForceActionQuiz3);
         quizList.add(electricCurrentQuiz);
         return quizList;
     }

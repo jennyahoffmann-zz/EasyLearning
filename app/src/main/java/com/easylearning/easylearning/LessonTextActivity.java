@@ -38,6 +38,9 @@ public class LessonTextActivity extends AppCompatActivity {
         //---- init views
         tv = (TextView) findViewById(R.id.textview_lesson_text);
 
+        //---- change action bar text
+        setTitle(extraUnit);
+
         //---- display first text from Chunk
         displayText();
     }

@@ -48,11 +48,15 @@ public class LessonQuizActivity extends AppCompatActivity {
             return;
         }
         int countChunk = extras.getInt("countChunk");
+        String extraUnit = extras.getString("unit");
 
         //---- get Chunk for selected unit
         Content content = new Content();
-        ArrayList<Chunk> chunkList = content.getChunkList(extras.getString("unit"));
+        ArrayList<Chunk> chunkList = content.getChunkList(extraUnit);
         quiz = chunkList.get(countChunk).getQuiz();
+
+        //---- change action bar text
+        setTitle(extraUnit);
 
         //---- init layout
         tvQuestion = (TextView) findViewById(R.id.textview_lesson_quiz);
