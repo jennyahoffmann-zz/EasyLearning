@@ -9,13 +9,15 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import io.github.kexanie.library.MathView;
+
 public class LessonTextActivity extends AppCompatActivity {
 
     public int countText = 0;
 
     ArrayList<Chunk> chunkList;
 
-    TextView tv;
+    MathView mv;
 
     String extraUnit;
 
@@ -36,7 +38,8 @@ public class LessonTextActivity extends AppCompatActivity {
         chunkList = content.getChunkList(extraUnit);
 
         //---- init views
-        tv = (TextView) findViewById(R.id.textview_lesson_text);
+        mv = (MathView) findViewById(R.id.mathview_lesson_text);
+        mv.getSettings().setDefaultFontSize(14);
 
         //---- change action bar text
         setTitle(extraUnit);
@@ -66,7 +69,7 @@ public class LessonTextActivity extends AppCompatActivity {
         //---- if still content in Chunk
         if (chunkList.size() > countText) {
             //---- display next text from Chunk
-            tv.setText(chunkList.get(countText).getText());
+            mv.setText(chunkList.get(countText).getText());
         } else {
             //---- close this activity and go back to ContentActivity
             finish();

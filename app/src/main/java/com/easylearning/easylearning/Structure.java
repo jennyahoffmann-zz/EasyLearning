@@ -1,7 +1,5 @@
 package com.easylearning.easylearning;
 
-import android.widget.Switch;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -55,6 +53,9 @@ public class Structure {
     private ArrayList<String> electricalCharge = new ArrayList<>(Arrays.asList("Herleitung: Ladung", "Ladungstrennung (Ionisation)"));
     private ArrayList<String> chargeDensity = new ArrayList<>(Arrays.asList("Linienladung", "Berechnung von Ladungsdichten", "Ladungsträger im Festkörper"));
     private ArrayList<String> coulombsLaw = new ArrayList<>(Arrays.asList("Herleitung: Coulomb'sches Gesetz", "Mehrfache Kraftwirkung auf eine Punktladung"));
+    private ArrayList<String> electricFieldStrength = new ArrayList<>(Arrays.asList("Herleitung: Elektrische Feldstärke", "Eigenschaften der Feldstärke"));
+    private ArrayList<String> superpositionOfFields = new ArrayList<>(Arrays.asList("Feld einer Punktladung", "Feld mehrer Punktladungen", "Feld einer Linienladung"));
+    private ArrayList<String> presentationOfFields = new ArrayList<>(Arrays.asList("Begriff: Feldlinie", "Konstruktion von Feldlinien", "Berechnung von Feldlinien"));
 
    /* public String[] getContent(int i) {
         if (i == R.string.electrostatic_field) {i = 0;}
@@ -73,7 +74,16 @@ public class Structure {
             case "1":
             case "Ladungsdichten":
                 return chargeDensity;
-            default: return coulombsLaw;
+            case "2":
+            case "Columb'sches Gestz":
+                return coulombsLaw;
+            case "3":
+            case "Elektrische Feldstärke":
+                return electricFieldStrength;
+            case "4":
+            case "Überlagerung von Feldern":
+                return superpositionOfFields;
+            default: return presentationOfFields;
         }
     }
 

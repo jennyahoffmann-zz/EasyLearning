@@ -21,48 +21,48 @@ public class Content {
     private ArrayList<Chunk> chunk;
 
     private String derivationChargeText =
-            "Protonen e⁺ sind positiv geladen Qp und Elektronen e⁻ sind negativ geladen Qe. \n\n" +
-            "Die Ladung beider Teilchen ist gleich groß, aber stets entgegengesetzt.\n\n" +
-            "Das Formelzeichen für die Ladung ist Q.\n\n" +
-            "Die kleinste Ladung, also die eines Protons oder Elektrons wird Elementarladung e genannt und beträgt e=1,6021892·10⁻¹⁹ As." +
-            "Die Einheit der Elementarladung ist [e] = C (Coulumb) = As (Amperesekunden)\n\n" +
-            "Alle beobachtbaren Ladungen Q sind ein ganzzahliges Vielfaches der Elekrtonenladung e: Q = N·e";
+            "Protonen \\(e^+\\) sind positiv geladen \\(Q_p\\) und Elektronen \\(e^-\\) sind negativ geladen \\(Q_e\\). " +
+            "Die Ladung beider Teilchen sind gleich groß, aber stets entgegengesetzt. $$$$" +
+            "Das Formelzeichen für die Ladung ist \\(Q\\). $$$$" +
+            "Die kleinste Ladung, also die eines Protons oder Elektrons wird Elementarladung \\(e\\) genannt und beträgt \\(e = 1,6021892·10^{-19}As\\). " +
+            "Die Einheit der Elementarladung ist \\([e] = C\\) (Coulumb) \\(= As\\) (Amperesekunden) $$$$" +
+            "Alle beobachtbaren Ladungen \\(Q\\) sind ein ganzzahliges Vielfaches der Elekrtonenladung \\(e\\): $$Q = N·e$$";
 
     private Quiz derivationChargeQuiz1 = new Quiz(
             "Welchen Wert hat die Elementarladung?",
-            "e = 1,6351892·10⁻¹²As", "e = 1,6021892·10⁻¹²C", "e = 1,6351892·10⁻¹⁹As", "e = 1,6021892·10⁻¹⁹As",
-            "e = 1,6021892·10⁻¹⁹As"
+            "\\(e = 1,6351892·10^{-12}As\\)", "\\(e = 1,6021892·10^{-12}C\\)", "\\(e = 1,6351892·10^{-19}As\\)", "\\(e = 1,6021892·10^{-19}As\\)",
+            "\\(e = 1,6021892·10^{-19}As\\)"
     );
 
     private Quiz derivationChargeQuiz2 = new Quiz(
             "Welches Formelzeichen hat die elektrische Ladung?",
-            "F", "Q", "N", "E",
-            "Q"
+            "\\(F\\)", "\\(Q\\)", "\\(N\\)", "\\(E\\)",
+            "\\(Q\\)"
     );
 
     private Quiz derivationChargeQuiz3 = new Quiz(
             "Welche Formel dient zur Berechnung der elektrischen Ladung?",
-            "Q = N/e", "Q = C/e", "Q = N·e", "Q = C·e",
-            "Q = N·e"
+            "\\(Q = \\frac{N}{e}\\)", "\\(Q = \\frac{C}{e}\\)", "\\(Q = N·e\\)", "\\(Q = C·e\\)",
+            "\\(Q = N·e\\)"
     );
 
     private Quiz derivationChargeQuiz4 = new Quiz(
             "Welche Einheit hat die Ladung?",
-            "N", "e", "As", "V",
-            "As"
+            "\\(N\\)", "\\(e\\)", "\\(As\\)", "\\(V\\)",
+            "\\(As\\)"
     );
 
     private Quiz derivationChargeQuiz5 = new Quiz(
             "Welche Einheit hat die Ladung?",
-            "N", "C", "Q", "V",
-            "C"
+            "\\(N\\)", "\\(C\\)", "\\(Q\\)", "\\(V\\)",
+            "\\(C\\)"
     );
 
     private String ionisation =
-            "Durch Reibung, also beim zuführen von Energie, werden Ladungen übertagen.\n\n" +
-            "Zum Beispiel: Ladungstrennung durch Ionisation beim Wasseratom H2O\n" +
-            "Ein Sauerstoffatom spaltet sich ab und übrig bleibt ein negativ geladenes Ion (Anion)  OH⁻\n" +
-            "und ein positiv geladenes Ion (Kation)  H⁺.\n\n" +
+            "Durch Reibung, also beim zuführen von Energie, werden Ladungen übertagen. " +
+            "Zum Beispiel: Ladungstrennung durch Ionisation beim Wasseratom \\(H_2O\\) $$$$" +
+            "Ein Sauerstoffatom spaltet sich ab und übrig bleibt ein negativ geladenes Ion (Anion)  \\(OH^-\\) " +
+            "und ein positiv geladenes Ion (Kation)  \\(H^+\\). " +
             "Die Ladung im Gesamtgebiet bleibt dabei unverändert.";
 
     private Quiz ionisation1 = new Quiz(
@@ -86,135 +86,135 @@ public class Content {
     //----------- charge density ----------//
 
     private String lineChargeText =
-            "Ladung kann in Linien, auf Flächen und im Raum berechnet werden.\n" +
-            "Dabei können die Elektronen homogen (d.h. gleichmäßig) oder aber ortsunabhängig (ungleichmäßig) verteielt sein.\n" +
-            "In der Regel sind die Ladungen ortsunabhängig verteilt.\n\n" +
-            "Berechnung der Ladungsdichte auf einer LINIE:\n\n" +
-            "homogen: λ = Q / l\n" +
-            "ortsunabhängig:  λ(s) = dQ / ds (ds entspricht dem Abschnitt, den wir betrachten wollen)\n" +
-            "Einheit: [λ] = As/m\n\n" +
-            "Berechnung der Ladungsdichte auf einer FLÄCHE:\n\n" +
-            "homogen: σ = Q / A\n" +
-            "ortsunabhängig: σ(A) = dQ / dA\n" +
-            "Einheit: [σ] = As/m²\n\n" +
-            "Berechnung der Ladungsdichte in einem RAUM:\n\n" +
-            "homogen: ρ = Q / V\n" +
-            "ortsunabhängig: ρ(V) = dQ / dV\n" +
-            "Einheit: [ρ] = As/m³";
+            "Ladung kann in Linien, auf Flächen und im Raum berechnet werden. " +
+            "Dabei können die Elektronen homogen (d.h. gleichmäßig) oder aber ortsunabhängig (ungleichmäßig) verteielt sein. " +
+            "In der Regel sind die Ladungen ortsunabhängig verteilt.$$$$" +
+            "Berechnung der Ladungsdichte auf einer \\mathbf{LINIE}:" +
+            "homogen: $$λ = \\frac{Q}{l}$$" +
+            "ortsunabhängig:  $$λ(s) = \\frac{dQ}{ds}$$ (ds entspricht dem Abschnitt, den wir betrachten wollen)$$$$" +
+            "Einheit: $$[λ] = \\frac{As}{m}$$" +
+            "Berechnung der Ladungsdichte auf einer \\mathbf{FLÄCHE}:" +
+            "homogen: $$σ = \\frac{Q}{A}$$" +
+            "ortsunabhängig: $$σ(A) = \\frac{dQ}{dA}$$" +
+            "Einheit: $$[σ] = \\frac{As}{m^2}$$" +
+            "Berechnung der Ladungsdichte in einem \\mathbf{RAUM}:" +
+            "homogen: $$ρ = \\frac{Q}{V}$$" +
+            "ortsunabhängig: $$ρ(V) = \\frac{dQ}{dV}$$" +
+            "Einheit: $$[ρ] = \\frac{As}{m^3}$$";
 
     private Quiz lineChargeQuiz1 = new Quiz(
             "Mit welcher Formel lässt sich die ortsunabhängige Ladungsdichte auf einer Linie berechnen?",
-            "λ(s) = dQ / ds", "λ(s) = ds / dQ", "λ(Q) = dQ / ds", "λ(Q) = ds / dQ",
-            "λ(s) = dQ / ds"
+            "\\(λ(s) = \\frac{\\mathrm{d}Q}{\\mathrm{d}s}\\)", "\\(λ(s) = \\frac{\\mathrm{d}s}{\\mathrm{d}Q}\\)", "\\(λ(Q) = \\frac{\\mathrm{d}Q}{\\mathrm{d}s}\\)", "\\(λ(Q) = \\frac{\\mathrm{d}s}{\\mathrm{d}Q}\\)",
+            "\\(λ(s) = \\frac{\\mathrm{d}Q}{\\mathrm{d}s}\\)"
     );
 
     private Quiz lineChargeQuiz2 = new Quiz(
             "Mit welcher Formel lässt sich die ortsunabhängige Ladungsdichte auf einer Fläche berechnen?",
-            "σ(A) = dQ / dA", "σ(Q) = dQ / dA", "σ(A) = dQ · dA", "σ(Q) = dQ · dA",
-            "σ(A) = dQ / dA"
+            "\\(σ(A) = \\frac{\\mathrm{d}Q}{\\mathrm{d}A}\\)", "\\(σ(Q) = \\frac{\\mathrm{d}Q}{\\mathrm{d}A}\\)", "\\(σ(A) = \\mathrm{d}Q·\\mathrm{d}A\\)", "\\(σ(Q) = \\mathrm{d}Q·\\mathrm{d}A\\)",
+            "\\(σ(A) = \\frac{\\mathrm{d}Q}{\\mathrm{d}A}\\)"
     );
 
     private Quiz lineChargeQuiz3 = new Quiz(
             "Mit welcher Formel lässt sich die ortsunabhängige Ladungsdichte in einem Raum berechnen?",
-            "ρ(V) = dQ / dV", "ρ(V) = Qd / Vd", "ρ(V) = dV / dQ", "ρ(V) = Vd / Qd",
-            "ρ(V) = dQ / dV"
+            "\\(ρ(V) = \\frac{\\mathrm{d}Q}{\\mathrm{d}V}\\)", "\\(ρ(V) = \\frac{Q\\mathrm{d}}{V\\mathrm{d}}\\)", "\\(ρ(V) = \\frac{\\mathrm{d}V}{\\mathrm{d}Q}\\)", "\\(ρ(V) = \\frac{V\\mathrm{d}}{Q\\mathrm{d}}\\)",
+            "\\(ρ(V) = \\frac{\\mathrm{d}Q}{\\mathrm{d}V}\\)"
     );
 
     private Quiz lineChargeQuiz4 = new Quiz(
             "Wie ist die Einheit der Linienladungsdichte?",
-            "[λ] = As/m", "[λ] = Q/m", "[λ] = m/As", "[λ] = As",
-            "[λ] = As/m"
+            "\\([λ] = \\frac{As}{m}\\)", "\\([λ] = \\frac{Q}{m}\\)", "\\([λ] = \\frac{m}{As}\\)", "\\([λ] = As\\)",
+            "\\([λ] = \\frac{As}{m}\\)"
     );
 
     private Quiz lineChargeQuiz5 = new Quiz(
             "Wie ist die Einheit der Flächenladungsdichte?",
-            "[σ] = As/m²", "[σ] = As/m", "[σ] = C/m", "[σ] = m/As",
-            "[σ] = As/m²"
+            "\\([σ] = \\frac{As}{m^2}\\)", "\\([σ] = \\frac{As}{m}\\)", "\\([σ] = \\frac{C}{m}\\)", "\\([σ] = \\frac{m}{As}\\)",
+            "\\([σ] = \\frac{As}{m^2}\\)"
     );
 
     private Quiz lineChargeQuiz6 = new Quiz(
             "Wie ist die Einheit der Raumladungsdichte?",
-            "[ρ] = As/m³", "[ρ] = m³/As", "λ(Q) = dQ / ds", "λ(Q) = Qd / Vd",
-            "[ρ] = As/m³"
+            "\\([ρ] = \\frac{As}{m^3}\\)", "\\([ρ] = \\frac{m^3}{As}\\)", "\\(λ(Q) = \\frac{\\mathrm{d}Q}{\\mathrm{d}s}\\)", "\\(λ(Q) = \\frac{Q\\mathrm{d}}{V\\mathrm{d}}\\)",
+            "\\([ρ] = \\frac{As}{m^3}\\)"
     );
 
     //----------- computation of charge density ----------//
 
     private String computationOfChargeDensityText =
-            "Da noch kein Latex integriert ist und desshalb das Integralzeichen noch nicht korrekt dargestellt werden kann, wird solange ersatzweise S als Integralzeichen verwendendet.\n\n\n" +
-            "Formel zur Berechnung der Linienladung:\n" +
-            "Q = S(λ(s))ds  mit den Grenzen l1 und l2\n\n" +
-            "Formel zur Berechnung der Flächenladung\n" +
-            "Q = SS(σ(A))dA  wobei über A integriet wird\n\n" +
-            "Formel zur Berechnung der Raumladung\n" +
-            "Q = SSS(ρ(V))dV  wbei über V integriert wird";
+            "Formel zur Berechnung der Linienladung:" +
+            "$$Q = \\int_{l_1}^{l_2} \\! λ(s) \\, \\mathrm{d}s$$" +
+            "Formel zur Berechnung der Flächenladung" +
+            "$$Q = \\iint\\limits_A \\! σ(A) \\, \\mathrm{d}A$$" +
+            "Formel zur Berechnung der Raumladung" +
+            "$$Q = \\iiint\\limits_V \\! ρ(V) \\, \\mathrm{d}V$$";
 
     private Quiz computationOfChargeDensityQuiz1 = new Quiz(
             "Mit welcher Formel lässt sich die ortsunabhängige Ladung auf einer Fläche berechnen?",
-            "Q = SS(σ(A))dA", "Q = S(σ(s))ds", "Q = S(λ(A))dA", "Q = SS(λ(s))ds",
-            "Q = SS(σ(A))dA"
+            "\\(Q = \\iint\\limits_A \\! σ(A) \\, \\mathrm{d}A\\)", "\\(Q = \\int_{l_1}^{l_2} \\! λ(s) \\, \\mathrm{d}s\\)", "\\(Q = \\int\\limits_A \\! λ(A) \\, \\mathrm{d}A\\)", "\\(Q = \\iint\\limits_S \\! λ(s) \\, \\mathrm{d}s\\)",
+            "\\(Q = \\iint\\limits_A \\! σ(A) \\, \\mathrm{d}A\\)"
     );
 
     private Quiz computationOfChargeDensityQuiz2 = new Quiz(
             "Mit welcher Formel lässt sich die ortsunabhängige Ladung auf einer Linie berechnen?",
-            "Q = S(λ(s))ds", "Q = S(λ(s))", "Q = SS(s)ds", "Q = SS(λ(s))ds",
-            "Q = S(λ(s))ds"
+            "\\(Q = \\int_{l_1}^{l_2} \\! λ(s) \\, \\mathrm{d}s\\)", "\\(Q = \\int_{l_1}^{l_2} \\! λ(s)\\)", "\\(Q = \\iint\\limits_S \\! s \\, \\mathrm{d}s\\)", "\\(Q = \\iint\\limits_S \\! λ(s) \\, \\mathrm{d}s\\)",
+            "\\(Q = \\int_{l_1}^{l_2} \\! λ(s) \\, \\mathrm{d}s\\)"
     );
 
     private Quiz computationOfChargeDensityQuiz3 = new Quiz(
             "Mit welcher Formel lässt sich die ortsunabhängige Ladung in einem Raum berechnen?",
-            "Q = SSS(ρ(V))dV", "Q = S(λ(V))dV", "Q = SSS(σ(V))dV", "Q = S(σ(V))dV",
-            "Q = SSS(ρ(V))dV"
+            "\\(Q = \\iiint\\limits_V \\! ρ(V) \\, \\mathrm{d}V\\)", "\\(Q = \\iiint\\limits_V \\! λ(V) \\, \\mathrm{d}V\\)", "\\(Q = \\iiint\\limits_V \\! σ(V) \\, \\mathrm{d}V\\)", "\\(Q = \\int\\limits_V \\! σ(V) \\, \\mathrm{d}V\\)",
+            "\\(Q = \\iiint\\limits_V \\! ρ(V) \\, \\mathrm{d}V\\)"
     );
 
     //----------- load carrier in solid state ----------//
 
     private String loadCarrierInSolidStateText =
-            "In Isolatoren sind alle Elektronen an Atome gebunden und können sich damit nicht quasi frei bewegen.\n\n" +
-            "Elektronen der äußeren Orbitale sind nicht mehr einzelnen Atomen zugeordnet.\n" +
-            "Diese, sich quasi frei bewegenden Elektronen, werden Valenzelektronen genannt.\n\n" +
-            "Berechnung der Valenzelektronendichte n:\n\n" +
-            "n = NA·Z·ρm·Mm⁻¹\n\n" +
-            "NA = 6,02214·10²³ Atome/mol … Avogadrokonstante\n" +
-            "Z … Zahl der Valenzelektronen pro Atom\n" +
-            "ρm … Materialdichtein g/cm³\n" +
-            "Mm … molare Masse in g/mol\n\n\n" +
-            "Berechnung der Raumladungsdichte über Valenzelektronen:\n\n" +
-            "ρ = dQ/dV = -e·n";
+            "In Isolatoren sind alle Elektronen an Atome gebunden und können sich damit nicht quasi frei bewegen. " +
+            "Elektronen der äußeren Orbitale sind nicht mehr einzelnen Atomen zugeordnet. " +
+            "Diese, sich quasi frei bewegenden Elektronen, werden Valenzelektronen genannt. $$$$" +
+            "Berechnung der Valenzelektronendichte n:" +
+            "$$n = N_AZρ_mM_m^{-1}$$" +
+            "$$N_A = 6,02214·10^{23} Atome/mol$$ $$N_A \\sim Avogadrokonstante$$" +
+            "$$Z \\sim  Zahl \\; der \\; Valenzelektronen \\; pro \\; Atom$$" +
+            "$$ρ_m \\sim  Materialdichte \\; in \\; \\frac{g}{cm^3}$$" +
+            "$$M_m \\sim  molare \\; Masse \\; in \\; \\frac{g}{mol}$$" +
+            "Berechnung der Raumladungsdichte über Valenzelektronen:" +
+            "$$ρ = \\frac{dQ}{dV} = -e·n$$";
 
     private Quiz loadCarrierInSolidStateQuiz1 = new Quiz(
             "Mit welcher Formel lässt sich die Valenzelektronendichte berechnen?",
-            "n = NA·Z·ρm·Mm⁻¹", "n = NA·e·ρm·Mm", "n = NA·Z·Mm·ρm⁻¹", "n = NA·e·Mm·ρm⁻¹",
-            "n = NA·Z·ρm·Mm⁻¹"
+            "\\(n = N_AZρ_mM_m^{-1}\\)", "\\(n = N_Aeρ_mM_m^{-1}\\)", "\\(n = N_AZM_mρ_m^{-1}\\)", "\\(n = N_AeM_mρ_m^{-1}\\)",
+            "\\(n = N_AZρ_mM_m^{-1}\\)"
     );
 
     private Quiz loadCarrierInSolidStateQuiz2 = new Quiz(
             "Welchen Wert hat die Avogadrokonstante?",
-            "NA = 6,02214·10²³", "NA = 7,83304·10²³", "NA = 6,02214·10⁻³²", "NA = 7,83304·10³²",
-            "NA = 6,02214·10²³"
+            "\\(N_A = 6,02214·10^{23}\\)", "\\(N_A = 7,83304·10^{23}\\)", "\\(N_A = 6,02214·10^{-32}\\)", "\\(N_A = 7,83304·10^{-32}\\)",
+            "\\(N_A = 6,02214·10^{23}\\)"
     );
 
     private Quiz loadCarrierInSolidStateQuiz3 = new Quiz(
             "Mit welcher Formel lässt sich die Raumladungsdichte brechnen?",
-            "ρ = -e·n", "ρ = e·n", "ρ = -e/n", "ρ = e/n",
-            "ρ = -e·n"
+            "\\(ρ = -e·n\\)", "\\(ρ = e·n\\)", "\\(ρ = \\frac{-e}{n}\\)", "\\(ρ = \\frac{e}{n}\\)",
+            "\\(ρ = -e·n\\)"
     );
 
     //----------- coulomb's law ----------//
 
-    private String derivationCoulombsLawText =
-            "Die Kraft F ist betragsmäßig proportoinal zwischen zwei Ladungen und umgekehrt proprtional zum Quadrat des Abstandes r.\n\n" +
-                    "F ~ Q1·Q2/r²\n\n" +
-                    "Mit der Proportionalitätskonstanten 1/(4πε0) ergibt sich\n\n" +
-                    "F = 1/(4πε0) · Q1·Q2/r²  (im Vakuum)\n\n" +
-                    "ε0 = 8,854·10⁻¹² As/Vm … elektrische Feldkonstante (auch Dielekrtizitätskonstante)\n\n" +
-                    "Nun fehlt noch die Richtung der Kraft die mit einem Einheitsvektor von Punktladung Q1 zur Punktladung Q2 zeigt. Das heißt die Kraft wirkt von Q2 auf Q1.\n\n" +
-                    "vec{F} = 1/(4·π·ε0) · Q1·Q2/|vec{r1}-vec{r2}|² · vec{e12}\n" +
-                    "vec{e12} = vec{r1}-vec{r2} / |vec{r1}-vec{r2}|" +
-                    "vec{F} = 1/(4·π·ε0) · Q1·Q2/r² · vec{er}\n\n" +
+    String derivationCoulombsLawText =
+            "Die Kraft \\(F\\) ist betragsmäßig proportoinal zwischen zwei Ladungen und umgekehrt proprtional zum Quadrat des Abstandes \\(r\\)." +
+                    "$$F \\sim \\frac{Q_1Q_2}{r^2}$$" +
+                    "Mit der Proportionalitätskonstanten \\(\\frac{1}{4πε_0}\\) ergibt sich" +
+                    "$$F = \\frac{1}{4πε_0}\\frac{Q_1Q_2}{r^2}    (im Vakuum)$$" +
+                    "$$ε_0 = 8,854·10^{-12}\\frac{As}{Vm}$$" +
+                    "\\(ε_0\\) ist die elektrische Feldkonstante (auch Dielekrtizitätskonstante genannt). " +
+                    "Nun fehlt noch die Richtung in die die Kraft wirkt als Einheitsvektor von Punktladung \\(Q_1\\) zur Punktladung \\(Q_2\\) zeigt. Das heißt die Kraft wirkt von \\(Q_2\\) auf \\(Q_1\\)." +
+                    "$$\\vec{F} = \\frac{1}{4πε_0} \\frac{Q_1Q_2}{|\\vec{r}_1-\\vec{r}_2|^2} \\vec{e}_{12}$$" +
+                    "$$\\vec{e}_{12} = \\frac{\\vec{r}_1-\\vec{r}_2}{|\\vec{r}_1-\\vec{r}_2|}$$" +
+                    "$$\\vec{F} = \\frac{1}{4πε_0}\\frac{Q_1Q_2}{r^2}\\vec{e}_r$$" +
                     "Die Eineit der Proportionalitätskonstanten ist:" +
-                    "[ε0] = [Q²] / [r²]·[F] = A²·s²/m²N = As/Vm\n\n" +
-                    "1Ws = 1VAs = 1Nm";
+                    "$$[ε_0] = \\frac{[Q^2]}{[r^2]·[F]}=\\frac{A²s²}{m²N} = \\frac{As}{Vm}$$" +
+                    "$$1Ws = 1V·As = 1Nm$$";
 
     private Quiz derivationCoulombsLawQuiz1 = new Quiz(
             "Was beschreibt das Coulomb'sche Gesetz?",
@@ -224,54 +224,54 @@ public class Content {
 
     private Quiz derivationCoulombsLawQuiz2 = new Quiz(
             "Welche Formel dient zur Berechnung der Kraft zwischen zwei Punktladungen?",
-            "vec{F} = 1/(4·π·ε0) · Q1·Q2/r² · vec{er}", "vec{F} = 1/(4·π·r²) · Q1·Q2 · vec{er}", "vec{F} = 4/(π·ε0) · Q1·Q2/r² · vec{er}", "vec{F} = 1/(4·π·ε0) · Q1·Q2 · vec{er}",
-            "vec{F} = 1/(4·π·ε0) · Q1·Q2/r² · vec{er}"
+            "\\(\\vec{F} = \\frac{1}{4πε_0} \\frac{Q_1Q_2}{r^2} · \\vec{e_r}\\)", "\\(\\vec{F} = \\frac{1}{4πε_0}Q_1Q_2 · \\vec{e_r}\\)", "\\(\\vec{F} = \\frac{4}{πε_0} \\frac{Q_1Q_2}{r^2} · \\vec{e_r}\\)", "\\(\\vec{F} = \\frac{1}{4πr^2}Q_1Q_2 · \\vec{e_r}\\)",
+            "\\(\\vec{F} = \\frac{1}{4πε_0} \\frac{Q_1Q_2}{r^2} · \\vec{e_r}\\)"
     );
 
     private Quiz derivationCoulombsLawQuiz3 = new Quiz(
             "Welche Einheit hat die Coulombkraft?",
-            "N", "As", "As/Vm", "Nm",
-            "N"
+            "\\(N\\)", "\\(As\\)", "\\(\\frac{As}{Vm}\\)", "\\(Nm\\)",
+            "\\(N\\)"
     );
 
     private Quiz derivationCoulombsLawQuiz4 = new Quiz(
             "Welche Einheit hat die Proportionalitätskonstante?",
-            "As/Vm", "As", "N", "Nm",
-            "As/Vm"
+            "\\(\\frac{As}{Vm}\\)", "\\(As\\)", "\\(N\\)", "\\(Nm\\)",
+            "\\(\\frac{As}{Vm}\\)"
     );
 
     private Quiz derivationCoulombsLawQuiz5 = new Quiz(
             "Welche Formel dient zur Berechnung des Coulomb'schen Gesetzes?",
-            "vec{F} = 1/(4·π·ε0) · Q1·Q2/r² · vec{er}", "Q = N·e", "n = NA·Z·ρm·Mm⁻¹", "U = R·I",
-            "vec{F} = 1/(4·π·ε0) · Q1·Q2/r² · vec{er}"
+            "\\(\\vec{F} = \\frac{1}{4πε_0} \\frac{Q_1Q_2}{r^2} · \\vec{e_r}\\)", "\\(Q = N·e\\)", "\\(n = N_AZρ_mM_m^{-1}\\)", "\\(U = R·I\\)",
+            "\\(\\vec{F} = \\frac{1}{4πε_0} \\frac{Q_1Q_2}{r^2} · \\vec{e_r}\\)"
     );
 
     private String multiplesForceActionText =
-            "Die Ladungen mit Index i wirken auf die Ladung mit dem Index n.\n\n" +
-                    "vec{Fn,i} = Qn·Qi / 4·π·ε0·rn,i² vec{ern,i}\n\n" +
-                    "= Summe aller Teilkräfte auf Ladung Qn:\n\n" +
-                    "vec{Fn} = Σ(vec{Fn,i}) von i=1 bis n-1\n\n\n" +
-                    "Die der Kräfte aller Ladungen ist 0.\n\n" +
-                    "Überlagerungssatz:\n\n" +
-                    "vec{Fn} = Qn/4·π·ε0 · Σ(Qi/ri,n²) · vec{eri,n}";
+            "Die Ladungen mit Index \\(i\\) wirken auf die Ladung mit dem Index \\(n\\). " +
+                    "$$\\vec{F}_{n,i} = \\frac{Q_nQ_i}{4πε_0r_{n,i}^2} \\vec{e}_{r(n,i)}$$ " +
+                    "= Summe aller Teilkräfte auf Ladung \\(Q_n\\): " +
+                    "$$\\vec{F}_n = \\sum_{i=1}^{n-1}\\vec{F}_{n,i}$$" +
+                    "Die der Kräfte aller Ladungen ist \\(0\\). $$$$" +
+                    "Überlagerungssatz: " +
+                    "$$\\vec{F}_n = \\frac{Q_n}{4πε_0} \\sum{\\frac{Q_i}{r_{i,n}^2}} \\vec{e}_{r(n,i)}$$";
 
     private Quiz multiplesForceActionQuiz1 = new Quiz(
             "Wie lautet das Überlagerungsgesetz?",
-            "vec{Fn} = Qn/4·π·ε0 · Σ(Qi/ri,n²) · vec{eri,n}", "vec{Fn} = Qn/4·π·ε0 · Σ(Qi/ri,n²) · vec{ern,i}", "vec{Fn} = Qn/4·π·ε0 · Qi/ri,n² · vec{eri,n}", "vec{Fn} = Qn/4·π·ε0 · Σ(Qi/rn,i²) vec{eri,n}",
-            "vec{Fn} = Qn/4·π·ε0 · Σ(Qi/ri,n²) · vec{eri,n}"
+            "\\(\\vec{F}_n = \\frac{Q_n}{4πε_0} \\sum{\\frac{Q_i}{r_{n,i}^2}} \\vec{e}_{r(n,i)}\\)", "\\(\\vec{F}_n = \\frac{Q_n}{4πε_0} \\sum{\\frac{Q_i}{r_{i,n}^2}} \\vec{e}_{r(i,n)}\\)", "\\(\\vec{F}_n = \\frac{Q_n}{4πε_0} \\sum{\\frac{Q_i}{r_{n,i}^2}} \\vec{e}_{r(i,n)}\\)", "\\(\\vec{F}_n = \\frac{Q_n}{4πε_0} \\sum{\\frac{Q_i}{r_{i,n}^2}} \\vec{e}_{r(i,n)}\\)",
+            "\\(\\vec{F}_n = \\frac{Q_n}{4πε_0} \\sum{\\frac{Q_i}{r_{n,i}^2}} \\vec{e}_{r(n,i)}\\)"
     );
 
 
     private Quiz multiplesForceActionQuiz2 = new Quiz(
-            "Worauf wirkt die Kraft bei der Formel vec{Fi,j} = 1/4·π·ε0 · Qi·Qj/ri,n² · vec{eri,n}?",
-            "auf Qi", "auf Qj", "Senkrecht zur Geraden durch Q1 und Q2", "es wirkt keine Kraft",
-            "auf Qi"
+            "Worauf wirkt die Kraft bei der Formel \\(\\vec{F}_{i,j} = \\frac{1}{4πε_0} \\frac{Q_iQ_j}{r_{i,j}}^2 \\vec{e_{r(i,j)}}\\)?",
+            "auf \\(Q_i\\)", "auf \\(Q_j\\)", "Senkrecht zur Geraden durch \\(Q_i\\) und \\(Q_n\\)", "es wirkt keine Kraft",
+            "auf \\(Q_i\\)"
     );
 
     private Quiz multiplesForceActionQuiz3 = new Quiz(
-            "Welche Ladung verursacht die Kraft bei der Formel vec{Fi,j} = 1/4·π·ε0 · Qi·Qj/ri,n² · vec{eri,n}?",
-            "Qj", "Qi", "beide Ladungen", "es wirkt keine Kraft",
-            "Qj"
+            "Welche Ladung verursacht die Kraft bei der Formel \\(\\vec{F}_{i,j} = \\frac{1}{4πε_0} \\frac{Q_iQ_j}{r_{i,j}}^2 \\vec{e_{r(i,j)}}\\)?",
+            "\\(Q_j\\)", "\\(Q_i\\)", "beide Ladungen", "es wirkt keine Kraft",
+            "\\(Q_j\\)"
     );
 
     //----------- extra quiz questions ----------//

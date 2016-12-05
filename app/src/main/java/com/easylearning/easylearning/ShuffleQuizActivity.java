@@ -14,6 +14,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Random;
 
+import io.github.kexanie.library.MathView;
+
 public class ShuffleQuizActivity extends AppCompatActivity {
 
     RadioGroup radioGroup;
@@ -21,10 +23,14 @@ public class ShuffleQuizActivity extends AppCompatActivity {
     RadioButton r2;
     RadioButton r3;
     RadioButton r4;
+    MathView m1;
+    MathView m2;
+    MathView m3;
+    MathView m4;
 
     ArrayList<Quiz> quiz;
 
-    TextView tvQuestion;
+    MathView tvQuestion;
 
     TextView tvFeedback;
 
@@ -35,6 +41,9 @@ public class ShuffleQuizActivity extends AppCompatActivity {
     Button buttonNext;
 
     Random rnd;
+
+    int[] arr = {0,1,2,3};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +56,17 @@ public class ShuffleQuizActivity extends AppCompatActivity {
         quiz = content.getAllQuizzes();
 
         //---- init layout
-        tvQuestion = (TextView) findViewById(R.id.textview_lesson_quiz);
+        tvQuestion = (MathView) findViewById(R.id.mathview_lesson_quiz);
 
         radioGroup = (RadioGroup) findViewById(R.id.radiogroup);
         r1 = (RadioButton) findViewById(R.id.radio1);
         r2 = (RadioButton) findViewById(R.id.radio2);
         r3 = (RadioButton) findViewById(R.id.radio3);
         r4 = (RadioButton) findViewById(R.id.radio4);
+        m1 = (MathView) findViewById(R.id.mathview_answer_1);
+        m2 = (MathView) findViewById(R.id.mathview_answer_2);
+        m3 = (MathView) findViewById(R.id.mathview_answer_3);
+        m4 = (MathView) findViewById(R.id.mathview_answer_4);
 
         tvFeedback = (TextView) findViewById(R.id.textview_answer_feedback);
 
@@ -73,6 +86,11 @@ public class ShuffleQuizActivity extends AppCompatActivity {
         if (radioGroup.getCheckedRadioButtonId() == -1) {
             return;
         }
+
+        r1.setText(quiz.get(index).getOptions().get(arr[0]));
+        r2.setText(quiz.get(index).getOptions().get(arr[1]));
+        r3.setText(quiz.get(index).getOptions().get(arr[2]));
+        r4.setText(quiz.get(index).getOptions().get(arr[3]));
 
         buttonSubmit.setVisibility(View.GONE);
 
@@ -96,6 +114,10 @@ public class ShuffleQuizActivity extends AppCompatActivity {
             tvFeedback.setVisibility(View.VISIBLE);
             disableRadioButtons();
         }
+        r1.setText("");
+        r2.setText("");
+        r3.setText("");
+        r4.setText("");
     }
 
     public void sendMessageLessonQuizTryAgain(View view) {
@@ -119,7 +141,6 @@ public class ShuffleQuizActivity extends AppCompatActivity {
     public void displayQuiz() {
         tvQuestion.setText(quiz.get(index).getQuestion());
 
-        int[] arr = {0,1,2,3};
         rnd = new Random();
         for (int i = 0; i < arr.length; i++) {
             int index = rnd.nextInt(arr.length );
@@ -128,10 +149,15 @@ public class ShuffleQuizActivity extends AppCompatActivity {
             arr[i] = a;
         }
 
-        r1.setText(quiz.get(index).getOptions().get(arr[0]));
-        r2.setText(quiz.get(index).getOptions().get(arr[1]));
-        r3.setText(quiz.get(index).getOptions().get(arr[2]));
-        r4.setText(quiz.get(index).getOptions().get(arr[3]));
+        r1.setText("");
+        r2.setText("");
+        r3.setText("");
+        r4.setText("");
+
+        m1.setText(quiz.get(index).getOptions().get(arr[0]));
+        m2.setText(quiz.get(index).getOptions().get(arr[1]));
+        m3.setText(quiz.get(index).getOptions().get(arr[2]));
+        m4.setText(quiz.get(index).getOptions().get(arr[3]));
     }
 
     private void disableRadioButtons() {
